@@ -23,8 +23,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "User")
-public class User implements UserDetails{
-	
+public class User implements UserDetails {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(nullable = false)
@@ -33,7 +33,7 @@ public class User implements UserDetails{
 	private String fullname;
 	@Column(nullable = false)
 	private String email;
-	@Column(nullable =false)
+	@Column(nullable = false)
 	private String password;
 	@CreationTimestamp
 	@Column(updatable = false, name = "created_at")
@@ -41,41 +41,43 @@ public class User implements UserDetails{
 	@UpdateTimestamp
 	@Column(name = "updated_at")
 	private Date updatedAt;
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+	public boolean isAccountNonExpired() {
+		return true;
+	}
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
 
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
-
-	
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 
 }
